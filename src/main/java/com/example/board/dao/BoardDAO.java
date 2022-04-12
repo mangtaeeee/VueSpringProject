@@ -1,5 +1,5 @@
 package com.example.board.dao;
 
-public interface BoardDAO {
+public interface BoardDAO { //보드
 
 }
