@@ -4,9 +4,9 @@ server:
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/study
-    username: testuser
-    password: testpass
+    url: jdbc:postgresql://192.168.0.30:5432/refficstest
+    username: refficstest
+    password: fpvlrtm1!
     
 mybatis:
   mapper-locations:
