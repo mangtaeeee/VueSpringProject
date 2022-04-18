@@ -1,3 +1,7 @@
 .classpath
 .project
+<<<<<<< HEAD
 *.yml
+=======
+*.yml
+>>>>>>> branch 'teayoon' of https://github.com/mangtaeeee/VueSpringProject.git
