@@ -9,6 +9,8 @@ spring:
     password: fpvlrtm1!
     
 mybatis:
+  config-location: 
+    classpath:mybatis-config.xml 
   mapper-locations:
-  - classpath:mapper/*.xml
+  - classpath:mapper/*/*.xml
  

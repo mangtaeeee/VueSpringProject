@@ -8,6 +8,6 @@ import com.example.board.vo.BoardVO;
 
 @Mapper
 public interface BoardDAO {
-	public List<BoardVO> boardList (BoardVO bvo);
+	public List<BoardVO> boardList(BoardVO bvo);
 	
 }
