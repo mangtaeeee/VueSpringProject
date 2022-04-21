@@ -19,7 +19,7 @@ public class BoardController {
 	
 	private final BoardService boardservice;
 	
-	@GetMapping("/list")
+	@GetMapping("/boardList")
 	public List<BoardVO> BoardList(BoardVO bvo){
 		List<BoardVO> boardList = boardservice.boardList(bvo);
 		log.info(boardList);
