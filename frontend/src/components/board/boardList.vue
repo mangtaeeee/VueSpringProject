@@ -4,9 +4,9 @@
         <div><!-- 콤보박스 선택 type="value"-->
           <b-form-select  v-model="type" :options="options" class="mb-2 mr-sm-2 mb-sm-0">
           </b-form-select>
-            <input type="text" id="param" v-model="param" :disabled="type == 'non'" >                
+            <input type="text" id="param" v-on:keyup.enter="SerchBoard()" v-model="param" :disabled="type == 'non'" >                
             <!--버튼 클릭시 get방식으로 값 요청--->
-            <button  @click="insertBoard()">검색</button>
+            <button  @click="SerchBoard()" >검색</button>
         </div>
         <table>
             <thead>
@@ -28,7 +28,7 @@
                 </tr>
             </tbody>
         </table>
-        <b-button variant="outline-secondary" style="float: right;" >글쓰기</b-button>
+        <b-button @click="insertBoard()" variant="outline-secondary" style="float: right;" >글쓰기</b-button>
     </div>
 </template>
 
@@ -65,7 +65,7 @@ export default {
                 });
         },
         insertBoard(){
-            
+            this.$router.push("/insertBoard");
         }
     },
     created (){
