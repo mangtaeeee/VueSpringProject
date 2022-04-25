@@ -2,11 +2,11 @@
   <div class="hello">
         <h1>게시판</h1>
         <div><!-- 콤보박스 선택 type="value"-->
-          <b-form-select  value="non" :options="options" class="mb-2 mr-sm-2 mb-sm-0">
+          <b-form-select  v-model="type" :options="options" class="mb-2 mr-sm-2 mb-sm-0">
           </b-form-select>
-            <input type="text" id="param" >                
+            <input type="text" id="param" v-model="param" :disabled="type == 'non'" >                
             <!--버튼 클릭시 get방식으로 값 요청--->
-            <button  @click="getBoard()">검색</button>
+            <button  @click="insertBoard()">검색</button>
         </div>
         <table>
             <thead>
@@ -28,6 +28,7 @@
                 </tr>
             </tbody>
         </table>
+        <b-button variant="outline-secondary" style="float: right;" >글쓰기</b-button>
     </div>
 </template>
 
@@ -39,12 +40,33 @@ export default {
     data(){
         return{
             boards:[],
+            type:"non",
+            param : "",
             options:[ //select를 위한 선언
                 {value:"non",text:"선택"},
                 {value:"title",text:"제목"},
                 {value:"mid",text:"작성자"},
             ]
         };
+    },
+    methods:{
+        SerchBoard(){
+            axios.get("api/boardList",{
+                params:{
+                    type: this.type,
+                    param:this.param
+                }
+            })
+                .then(response => {
+                    this.boards = response.data;
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        },
+        insertBoard(){
+            
+        }
     },
     created (){
         axios.get("api/boardList",{
@@ -62,7 +84,7 @@ export default {
 </script>
 
 <style>
-table {
+table{
     border: 1px solid black;
     border-collapse: collapse;
     width: 1000px;

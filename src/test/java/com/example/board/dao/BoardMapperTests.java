@@ -16,16 +16,16 @@ import lombok.extern.log4j.Log4j2;
 @SpringBootTest 
 public class BoardMapperTests {
 	
-	@Resource
-	private BoardDAO boardDao;
-	
-	@Test
-	public void testBoardList() {
-		BoardVO bvo = new BoardVO();
-		List<BoardVO> list = boardDao.boardList(bvo);		
-		log.debug(list);
-		for(BoardVO vo : list) {
-			log.info(vo);
-		}
-	}
+//	@Resource
+//	private BoardDAO boardDao;
+//	
+//	@Test
+//	public void testBoardList() {
+//		BoardVO bvo = new BoardVO();
+//		List<BoardVO> list = boardDao.boardList();		
+//		log.debug(list);
+//		for(BoardVO vo : list) {
+//			log.info(vo);
+//		}
+//	}
 }
