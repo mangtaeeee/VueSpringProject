@@ -2,14 +2,11 @@
   <div class="hello">
         <h1>게시판</h1>
         <div><!-- 콤보박스 선택 type="value"-->
-          <b-form-select  :options="options" class="mb-2 mr-sm-2 mb-sm-0">
+          <b-form-select  value="non" :options="options" class="mb-2 mr-sm-2 mb-sm-0">
           </b-form-select>
             <input type="text" id="param" >                
             <!--버튼 클릭시 get방식으로 값 요청--->
-            <button  @click="getBoard()">Get검색</button>
-            <!--버튼 클릭시 post 방식으로 값 요청-->
-            <button @click="postBoard()" >post검색</button>
-            <!--받아온 값 작성자 확인 텍스트-->
+            <button  @click="getBoard()">검색</button>
         </div>
         <table>
             <thead>
@@ -25,6 +22,7 @@
                 <tr v-for="board in boards" :key="board.bnum">
                     <td>{{ board.bnum }}</td>
                     <td>{{ board.btitle }}</td>
+                    
                     <td>{{ board.mid }}</td>
                     <td>{{ board.bregdate }}</td>
                 </tr>
@@ -44,8 +42,7 @@ export default {
             options:[ //select를 위한 선언
                 {value:"non",text:"선택"},
                 {value:"title",text:"제목"},
-                {value:"contents",text:"내용"},
-                {value:"userNm",text:"작성자"},
+                {value:"mid",text:"작성자"},
             ]
         };
     },

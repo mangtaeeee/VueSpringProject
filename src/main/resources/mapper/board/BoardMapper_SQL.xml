@@ -2,7 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.board.dao.BoardDAO">
 	<select id="boardList" resultType="com.example.board.vo.BoardVO">
-		SELECT * FROM board
+		select m_id,b_num,b_file,b_title,b_content,b_regdate
+		from  board 
 	</select>
 
 </mapper>

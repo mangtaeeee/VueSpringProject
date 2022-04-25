@@ -12,4 +12,6 @@ public class BoardVO { 			//게시판 테이블
 	private String bRegdate;	//게시판 등록일
 	
 	
+	
+	
 }
