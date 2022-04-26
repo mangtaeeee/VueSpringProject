@@ -22,13 +22,12 @@
                 <tr v-for="board in boards" :key="board.bnum">
                     <td>{{ board.bnum }}</td>
                     <td>{{ board.btitle }}</td>
-                    
                     <td>{{ board.mid }}</td>
                     <td>{{ board.bregdate }}</td>
                 </tr>
             </tbody>
         </table>
-        <b-button @click="insertBoard()" variant="outline-secondary" style="float: right;" >글쓰기</b-button>
+        <b-button @click="insertBoard()" variant="outline-secondary" >글쓰기</b-button>
     </div>
 </template>
 
