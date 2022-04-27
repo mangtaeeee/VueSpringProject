@@ -33,13 +33,16 @@ public class BoardController {
 		log.info(boardList);
 		return boardList;
 	}
+	
 	@PostMapping("/insertBoard")
 	public String insertBoard(@RequestBody BoardVO bvo) {
 		int result = 0;
 		result = boardservice.insertBoard(bvo);
 		if (result == 1) {
-			return "succes";
+			log.info(result);
+			return "success";
 		} else {
+			log.info(result);
 			return "fail";
 		}
 	}
