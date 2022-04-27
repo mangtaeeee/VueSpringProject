@@ -5,6 +5,8 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.board.service.BoardService;
@@ -30,6 +32,16 @@ public class BoardController {
 		List<BoardVO> boardList = boardservice.boardList(pvo);
 		log.info(boardList);
 		return boardList;
+	}
+	@PostMapping("/insertBoard")
+	public String insertBoard(@RequestBody BoardVO bvo) {
+		int result = 0;
+		result = boardservice.insertBoard(bvo);
+		if (result == 1) {
+			return "succes";
+		} else {
+			return "fail";
+		}
 	}
 	
 	

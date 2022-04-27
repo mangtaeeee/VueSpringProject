@@ -9,5 +9,9 @@
 			<if test="type == 'mid'">m_id like '%' || #{param} || '%' </if>
 		</where>
 	</select>
-
+	<insert id="insertBoard" parameterType="com.example.board.vo.BoardVO">
+		insert into board(m_id,b_num,b_file,b_title,b_content)
+		values (#{mId},nextval('board_seq'),#{bFile},#{bTitle},#{bContent})
+	</insert>
+	
 </mapper>

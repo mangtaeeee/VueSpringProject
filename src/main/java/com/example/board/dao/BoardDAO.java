@@ -10,5 +10,5 @@ import com.example.board.vo.ParamVO;
 @Mapper
 public interface BoardDAO {
 	public List<BoardVO> boardList(ParamVO pvo);
-	
+	public int insertBoard(BoardVO bvo);
 }
