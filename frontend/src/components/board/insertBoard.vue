@@ -40,8 +40,7 @@ export default {
                     console.log(error);
                     alert("입력이 잘못 되었습니다 다시 입력해주세요.");
                 });
-
-            
+           
         }
     }
 };
