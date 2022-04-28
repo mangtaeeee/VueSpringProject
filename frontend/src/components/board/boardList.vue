@@ -64,7 +64,7 @@ export default {
                 });
         },
         insertBoard(){
-            this.$router.replace("/insertBoard");
+            this.$router.push("/insertBoard");
         }
     },
     created (){

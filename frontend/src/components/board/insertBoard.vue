@@ -21,11 +21,9 @@ export default {
                 bfile:"",
                 mid:"",
             }
-            
         };
     },
     methods:{
-        
         insertBoard(){
             axios.post("api/insertBoard",{
                 btitle:this.boardinsert.bTitle,
@@ -37,7 +35,6 @@ export default {
                     alert("등록되었습니다.");
                     console.log(response);
                     this.$router.push("/boardList");
-                    
                 })
                 .catch(error => {
                     console.log(error);
@@ -47,7 +44,6 @@ export default {
             
         }
     }
-
 };
 </script>
 
