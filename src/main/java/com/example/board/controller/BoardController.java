@@ -4,7 +4,9 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,18 +35,26 @@ public class BoardController {
 		log.info(boardList);
 		return boardList;
 	}
-	
+
 	@PostMapping("/insertBoard")
-	public String insertBoard(@RequestBody BoardVO bvo) {
+	public String insertBoard(@RequestBody BoardVO bvo) throws Exception {
 		int result = 0;
 		result = boardservice.insertBoard(bvo);
+		
 		if (result == 1) {
 			log.info(result);
-			return "success";
+			return "/boardList";
 		} else {
 			log.info(result);
 			return "fail";
 		}
+	}
+	
+	@DeleteMapping("/boardDelete")
+	public String boardDelete(@ModelAttribute BoardVO bvo) throws Exception {
+		boardservice.boardDelete(bvo);
+		return "success";
+		
 	}
 	
 	

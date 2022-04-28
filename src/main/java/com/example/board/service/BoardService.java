@@ -8,5 +8,6 @@ import com.example.board.vo.ParamVO;
 public interface BoardService {
 	public List<BoardVO> boardList (ParamVO pvo);
 	public int insertBoard(BoardVO bvo);
+	public int boardDelete(BoardVO bvo);
 
 }

@@ -15,6 +15,7 @@
                     <th>제목</th>
                     <th>작성자</th>
                     <th>작성일시</th>
+                    <th>삭제</th>
                 </tr>
                 
             </thead>
@@ -24,6 +25,7 @@
                     <td>{{ board.btitle }}</td>
                     <td>{{ board.mid }}</td>
                     <td>{{ board.bregdate }}</td>
+                    <td><button v-on:click="remove(board.bnum)">삭제</button></td>
                 </tr>
             </tbody>
         </table>
@@ -65,6 +67,17 @@ export default {
         },
         insertBoard(){
             this.$router.push("/insertBoard");
+        },
+
+        remove(bnum){
+            axios.delete("api/boardDelete?bNum="+bnum)
+                .then(response => {
+                    console.log(response);
+                    this.$router.go();
+                })
+                .catch(error => {
+                    console.log(error);
+                });
         }
     },
     created (){
@@ -77,7 +90,8 @@ export default {
             .catch(error => {
                 console.log(error);
             });
-    }
+    },
+    
 
 };
 </script>

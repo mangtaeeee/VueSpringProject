@@ -13,5 +13,9 @@
 		insert into board(m_id,b_num,b_file,b_title,b_content)
 		values (#{mId},nextval('board_seq'),#{bFile},#{bTitle},#{bContent})
 	</insert>
+	<delete id="boardDelete" parameterType="com.example.board.vo.BoardVO">
+		delete from board
+		where b_num = #{bNum}
+	</delete>
 	
 </mapper>

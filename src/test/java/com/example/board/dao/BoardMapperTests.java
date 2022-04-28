@@ -34,13 +34,22 @@ public class BoardMapperTests {
 //		
 //	}
 	
-	@Test
-	public void testBoardList() {
-		ParamVO pvo = new ParamVO();
-		List<BoardVO> list = boardDao.boardList(pvo);		
-		log.debug(list);
-		for(BoardVO vo : list) {
-			log.info(vo);
-		}
-	}
+//	@Test
+//	public void testBoardList() {
+//		ParamVO pvo = new ParamVO();
+//		List<BoardVO> list = boardDao.boardList(pvo);		
+//		log.debug(list);
+//		for(BoardVO vo : list) {
+//			log.info(vo);
+//		}
+//	}
+//	@Test
+//	public void testBoardDelete() {
+//		BoardVO bvo = new BoardVO();
+//		bvo.setBNum(7);
+//		
+//		int result = 0;
+//		result = boardDao.boardDelete(bvo);
+//		log.debug(result);
+//	}
 }
