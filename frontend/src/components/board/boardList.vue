@@ -72,8 +72,9 @@ export default {
         remove(bnum){
             axios.delete("api/boardDelete?bNum="+bnum)
                 .then(response => {
-                    console.log(response);
-                    this.$router.go();
+                    if(response.data == "success"){
+                        this.$router.go();
+                    }
                 })
                 .catch(error => {
                     console.log(error);
