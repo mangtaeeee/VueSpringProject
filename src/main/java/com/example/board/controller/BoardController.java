@@ -54,7 +54,6 @@ public class BoardController {
 	public String boardDelete(@ModelAttribute BoardVO bvo) throws Exception {
 		boardservice.boardDelete(bvo);
 		return "success";
-		
 	}
 	
 	
