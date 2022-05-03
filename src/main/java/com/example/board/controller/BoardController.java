@@ -35,7 +35,8 @@ public class BoardController {
 		log.info(boardList);
 		return boardList;
 	}
-
+	
+	
 	@PostMapping("/insertBoard")
 	public String insertBoard(@RequestBody BoardVO bvo) throws Exception {
 		int result = 0;
