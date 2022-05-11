@@ -1,4 +1,3 @@
 # VueSpringProject
 
-
-RestAPI 다 사용하면서 Axios 사용해 게시판 구현
+Axios를 통해 REST API 이용
