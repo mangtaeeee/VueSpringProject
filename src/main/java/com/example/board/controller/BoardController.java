@@ -41,10 +41,10 @@ public class BoardController {
 	public String insertBoard(@RequestBody BoardVO bvo) throws Exception {
 		int result = 0;
 		result = boardservice.insertBoard(bvo);
-		
+		log.info(result);
 		if (result == 1) {
 			log.info(result);
-			return "/boardList";
+			return "success";
 		} else {
 			log.info(result);
 			return "fail";
