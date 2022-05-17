@@ -66,7 +66,7 @@ export default {
                 });
         },
         insertBoard(){
-            this.$router.push("/insertBoard");
+            window.location.href = "/insertBoard";
         },
 
         remove(bnum){

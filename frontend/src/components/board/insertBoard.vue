@@ -30,7 +30,7 @@ export default {
                     if(response == "success"){
                         console.log(response);
                         alert("등록되었습니다.");
-                        this.$router.push("api/boardList");
+                        window.location.href = "api/boardList";
                     }
                 })
                 .catch(error => {
