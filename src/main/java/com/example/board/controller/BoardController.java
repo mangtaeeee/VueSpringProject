@@ -18,7 +18,6 @@ import com.example.board.vo.ParamVO;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
-
 @AllArgsConstructor
 @RestController
 @Log4j2
